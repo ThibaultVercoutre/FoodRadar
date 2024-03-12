@@ -4,6 +4,8 @@ import { HomeComponent } from './home/home.component';
 import { ResearchComponent } from './research/research.component';
 import { CatalogComponent } from './catalog/catalog.component';
 import { PublicRoutingModule } from './public-routing.module';
+import { PlayoutComponent } from './playout/playout.component';
+import { PnavbarComponent } from './pnavbar/pnavbar.component';
 
 
 
@@ -11,7 +13,9 @@ import { PublicRoutingModule } from './public-routing.module';
   declarations: [
     HomeComponent,
     ResearchComponent,
-    CatalogComponent
+    CatalogComponent,
+    PlayoutComponent,
+    PnavbarComponent
   ],
   imports: [
     CommonModule,

@@ -1,1 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
+
+@font-face {
+    font-family: 'Lexend';
+    src: url('assets/Lexend.ttf');
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Lexend', sans-serif;
+}
