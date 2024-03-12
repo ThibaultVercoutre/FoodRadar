@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "foodradar-2dd84": {
+      "hosting": {
+        "foodradar": [
+          "foodradar-2dd84"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "foodradar-2dd84"
+  }
+}
