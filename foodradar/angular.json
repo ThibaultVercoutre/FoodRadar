@@ -93,8 +93,28 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "version": 2
+          },
+          "configurations": {
+            "production": {
+              "buildTarget": "foodradar:build:production",
+              "serveTarget": "foodradar:serve:production"
+            },
+            "development": {
+              "buildTarget": "foodradar:build:development",
+              "serveTarget": "foodradar:serve:development"
+            }
+          },
+          "defaultConfiguration": "production"
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "9fa66986-d608-4254-8ccd-6c5e8e54dc75"
   }
 }
