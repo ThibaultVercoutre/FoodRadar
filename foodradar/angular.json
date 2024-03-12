@@ -5,7 +5,17 @@
   "projects": {
     "foodradar": {
       "projectType": "application",
-      "schematics": {},
+      "schematics": {
+        "@schematics/angular:component": {
+          "standalone": false
+        },
+        "@schematics/angular:directive": {
+          "standalone": false
+        },
+        "@schematics/angular:pipe": {
+          "standalone": false
+        }
+      },
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
@@ -27,12 +37,7 @@
             "styles": [
               "src/styles.css"
             ],
-            "scripts": [],
-            "server": "src/main.server.ts",
-            "prerender": true,
-            "ssr": {
-              "entry": "server.ts"
-            }
+            "scripts": []
           },
           "configurations": {
             "production": {
@@ -115,6 +120,6 @@
     }
   },
   "cli": {
-    "analytics": "9fa66986-d608-4254-8ccd-6c5e8e54dc75"
+    "analytics": "c14c0a07-8639-4aac-894e-ece78c49adc2"
   }
 }
