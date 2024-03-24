@@ -1,11 +1,22 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { ErrorComponent } from './_utils/error/error.component';
+import { HomeComponent } from './home/home.component';
+import { CatalogComponent } from './catalog/catalog.component';
+import { ResearchComponent } from './research/research.component';
+import { LoginComponent } from './login/login.component';
+import { SigninComponent } from './signin/signin.component';
+import { LogoutComponent } from './logout/logout.component';
 
 const routes: Routes = [
-  {
-    path: '', loadChildren: () => import('./public/public.module')
-      .then(m => m.PublicModule)
-  }
+  { path: '', redirectTo: '/home', pathMatch: 'full'},  
+  { path: 'home', component: HomeComponent },
+  { path: 'catalog', component: CatalogComponent },
+  { path: 'research', component: ResearchComponent },
+  { path: 'login', component: LoginComponent },
+  { path: 'signin', component: SigninComponent },
+  { path: 'logout', component: LogoutComponent },
+  { path: '**', component: ErrorComponent }
 ];
 
 @NgModule({
