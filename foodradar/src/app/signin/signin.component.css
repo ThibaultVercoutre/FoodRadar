@@ -1,0 +1,10 @@
+div {
+    background-color: rgb(33, 33, 33);
+}
+div form{
+    height: calc(100vh - 60px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
