@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { Auth, onAuthStateChanged, signOut } from '@angular/fire/auth';
 
 @Component({
   selector: 'app-logout',
@@ -6,5 +7,13 @@ import { Component } from '@angular/core';
   styleUrl: './logout.component.css'
 })
 export class LogoutComponent {
+  private auth = inject(Auth)
+  constructor() {
+    onAuthStateChanged(this.auth, user=>{console.log(user)})
+  }
 
+  public signOut() {
+    return signOut(this.auth).then(() => {
+    });
+  }
 }

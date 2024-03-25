@@ -9,8 +9,11 @@
             <input matInput type="password" name="password" id="password" [(ngModel)]="form.password" #password="ngModel" required>
         </mat-form-field>
         <div class="group">
-            <button mat-raised-button type="submit">Sigin</button>
-        </div>
+            <button mat-raised-button type="submit">S'inscrire</button>
+        </div> 
     </form>
-
+    <div class="account">
+        <p>Déjà un compte ?</p>
+        <a mat-raised-button (click)="redirectToLogin()">Se connecter</a>
+    </div> 
 </div>
