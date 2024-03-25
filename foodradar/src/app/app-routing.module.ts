@@ -14,8 +14,8 @@ const redirectUnauthorizedToLogin = () => redirectUnauthorizedTo(['login']);
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full'},  
   { path: 'home', component: HomeComponent },
-  { path: 'catalog', component: CatalogComponent },
-  { path: 'research', component: ResearchComponent },
+  { path: 'catalog', component: CatalogComponent, canActivate: [AuthGuard], data: {authGuardPipe: redirectUnauthorizedToLogin} },
+  { path: 'research', component: ResearchComponent, canActivate: [AuthGuard], data: {authGuardPipe: redirectUnauthorizedToLogin} },
   { path: 'login', component: LoginComponent },
   { path: 'signin', component: SigninComponent },
   { path: 'logout', component: LogoutComponent, canActivate: [AuthGuard], data: {authGuardPipe: redirectUnauthorizedToLogin} },
