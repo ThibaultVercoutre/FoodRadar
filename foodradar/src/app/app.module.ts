@@ -10,6 +10,7 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
 import { ErrorComponent } from './_utils/error/error.component';
 import { environment } from '../environments/environments';
 import { AuthGuardModule } from '@angular/fire/auth-guard';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { AuthGuardModule } from '@angular/fire/auth-guard';
     BrowserModule,
     AppRoutingModule,
     AuthGuardModule,
+    HttpClientModule,
     provideFirebaseApp(() => initializeApp(environment)),
     provideAuth(() => getAuth()),
     provideFirestore(() => getFirestore()),

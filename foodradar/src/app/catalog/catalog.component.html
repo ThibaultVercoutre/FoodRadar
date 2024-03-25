@@ -1,3 +1,23 @@
-<div>
-    <p>catalog works!</p>
+<div id="catalog">
+    <div id="type">
+        <button mat-raised-button (click)="getPlats('Chocolate')">Chocolat</button>
+        <button mat-raised-button (click)="getPlats('vegetables')">Légumes</button>
+        <button mat-raised-button (click)="getPlats('meat')">Viandes</button>
+    </div>
+    <div id="plats">
+        <div *ngFor="let plat of plats">
+            <mat-card>
+                <mat-card-header>
+                    <mat-card-title>{{plat.name}}</mat-card-title>
+                    <mat-card-subtitle>{{plat.type}}</mat-card-subtitle>
+                </mat-card-header>
+                <img mat-card-image src="{{plat.image}}">
+                <mat-card-content>
+                    <p>{{plat.description}}</p>
+                </mat-card-content>
+                <mat-card-actions>
+                    <button mat-raised-button color="primary">Ajouter</button>
+                </mat-card-actions>
+            </mat-card>
+        </div>
 </div>
