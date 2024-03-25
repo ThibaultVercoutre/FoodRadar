@@ -14,7 +14,7 @@ import { getAuth, createUserWithEmailAndPassword, sendEmailVerification } from "
 })
 
 export class SigninComponent {
-  // public auth = getAuth();
+  
   form: any = {
     email: null,
     password: null,

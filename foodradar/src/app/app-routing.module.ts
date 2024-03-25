@@ -7,6 +7,7 @@ import { ResearchComponent } from './research/research.component';
 import { LoginComponent } from './login/login.component';
 import { SigninComponent } from './signin/signin.component';
 import { LogoutComponent } from './logout/logout.component';
+// import { AngularFireAuthGuard } from '@angular/fire/auth-guard';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full'},  
@@ -15,7 +16,7 @@ const routes: Routes = [
   { path: 'research', component: ResearchComponent },
   { path: 'login', component: LoginComponent },
   { path: 'signin', component: SigninComponent },
-  { path: 'logout', component: LogoutComponent },
+  { path: 'logout', component: LogoutComponent},
   { path: '**', component: ErrorComponent }
 ];
 
