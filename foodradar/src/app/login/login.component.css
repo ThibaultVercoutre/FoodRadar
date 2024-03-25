@@ -5,3 +5,11 @@ div form{
     justify-content: center;
     align-items: center;
 }
+
+.noaccount{
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

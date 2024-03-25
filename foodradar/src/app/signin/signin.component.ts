@@ -4,6 +4,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { getAuth, createUserWithEmailAndPassword, sendEmailVerification } from "firebase/auth";
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-signin',
@@ -19,6 +20,13 @@ export class SigninComponent {
     email: null,
     password: null,
   };
+
+  constructor(private router: Router) { }
+
+  // Méthode pour rediriger vers la route /signin
+  redirectToLogin() {
+    this.router.navigate(['/login']);
+  }
 
   onSubmit(): void {
     console.log(this.form.email, this.form.password);
@@ -40,8 +48,6 @@ export class SigninComponent {
           });
       })
       .catch((error) => {
-        this.form.emailinvalide = true;
-        console.log(this.form.emailinvalide);
         const errorCode = error.code;
         const errorMessage = error.message;
         console.log(errorCode, errorMessage);
