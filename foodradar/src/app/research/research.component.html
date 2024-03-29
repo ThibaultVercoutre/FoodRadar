@@ -1,15 +1,28 @@
 <div id="researchBar">
     <div id="nom">
-        <input type="text" [(ngModel)]="nomPlat" name="nomPlat">
-        <button (click)="getPlats(nomPlat)">Rechercher</button>
+        <input type="text" [(ngModel)]="query" name="query">
+        <button (click)="rechercher(query)">Rechercher</button>
     </div>
-    <div *ngIf="plats.length > 0">
-        <div *ngFor="let plat of plats">
-            <ul *ngIf="plats.length > 0">
-                <li>
-                    {{ plat.strMeal }}
-                </li>
-            </ul>
+    <div id="results">
+        <div *ngIf="plats.length > 0">
+            <h1>Plats pertinents</h1>
+            <div *ngFor="let plat of plats">
+                <ul *ngIf="plats.length > 0">
+                    <li>
+                        {{ plat.strMeal }}
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div *ngIf="plats2.length > 0">
+            <h1>Liste de plats intéressants</h1>
+            <div *ngFor="let plat of plats2; let i = index">
+                <ul *ngIf="i < 20">
+                    <li>
+                        {{ plat.description }}
+                    </li>
+                </ul>
+            </div>
         </div>
     </div>
 </div>

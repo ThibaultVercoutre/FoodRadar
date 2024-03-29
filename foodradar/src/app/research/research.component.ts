@@ -3,7 +3,7 @@ import { ApiService } from '../api.service';
 import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-import { Meal, Meals } from '../plat';
+import { Meal, Meals, Meal2 } from '../plat';
 import { MatCardModule } from '@angular/material/card';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
@@ -18,18 +18,23 @@ import { FormsModule } from '@angular/forms';
 })
 
 export class ResearchComponent  {
-nomPlat: any;
 
   constructor(
     public apiService : ApiService
   ){}
 
+  query: any;
   plats: Meal[] = [];
+  plats2: Meal2[] = [];
 
-  public getPlats(nomPlat: string){
-    this.apiService.getPlatsByType(nomPlat).subscribe(a =>{
+  public rechercher(query: string){
+    this.apiService.getPlatsByType(query).subscribe(a =>{
       console.log(a);
       this.plats = a.meals;
+    })
+    this.apiService.rechercherPlat(query).subscribe(a =>{
+      console.log(a);
+      this.plats2 = a.foods;
     })
   }
 }
