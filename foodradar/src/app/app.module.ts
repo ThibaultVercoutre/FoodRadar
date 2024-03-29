@@ -12,6 +12,7 @@ import { ErrorComponent } from './_utils/error/error.component';
 import { environment } from '../environments/environments';
 import { AuthGuardModule } from '@angular/fire/auth-guard';
 import { HttpClientModule } from '@angular/common/http';
+import { PlatComponent } from './plat/plat.component';
 
 @NgModule({
   declarations: [
