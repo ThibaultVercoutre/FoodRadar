@@ -14,9 +14,16 @@
 
 #plats {
     padding: 20px;
-    width: 100vw;
+    width: 90vw;
 }
 
 .fixed-column {
     width: 150px; /* Taille fixe pour la colonne */
+}
+
+.categorie_desc{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    height: 100px;
 }

@@ -5,10 +5,3 @@
     justify-content: center;
     align-items: center;
 }
-
-#results {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-}
