@@ -5,22 +5,26 @@
     </div>
     <div id="results">
         <div *ngIf="plats.length > 0">
-            <h1>Plats pertinents</h1>
             <div *ngFor="let plat of plats">
                 <ul *ngIf="plats.length > 0">
-                    <li>
+                    <h3>
                         {{ plat.strMeal }}
-                    </li>
+                    </h3>
+                    <p>
+                        {{ plat.strIngredient1 }}, {{ plat.strIngredient2 }}, {{ plat.strIngredient3 }}...
+                    </p>
                 </ul>
             </div>
         </div>
         <div *ngIf="plats2.length > 0">
-            <h1>Liste de plats intéressants</h1>
-            <div *ngFor="let plat of plats2; let i = index">
+            <div *ngFor="let plat of filterPlatsAvecIngredients(plats2); let i = index">
                 <ul *ngIf="i < 20">
-                    <li>
+                    <h3>
                         {{ plat.description }}
-                    </li>
+                    </h3>
+                    <p>
+                        {{ formatIngredients(plat.ingredients) }}
+                    </p>
                 </ul>
             </div>
         </div>
