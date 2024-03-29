@@ -20,9 +20,12 @@ export class CatalogComponent  {
     public apiService : ApiService
   ){}
 
+  plats: Meal[] = [];
+
   public getPlats(typePlat: string){
     this.apiService.getPlatsByType(typePlat).subscribe(a =>{
       console.log(a);
+      this.plats = a.meals;
     })
   }
 }
