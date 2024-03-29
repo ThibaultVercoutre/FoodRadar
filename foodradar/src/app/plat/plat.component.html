@@ -1,0 +1,27 @@
+<div id="details_plat">
+    <div>
+        <mat-card>
+            <mat-card-content>
+                <div class="presentation">
+                    <h1>{{ plat.strMeal }}</h1>
+                    <h2>{{ plat.strCategory }} - {{ plat.strArea }}</h2>
+                    <img [src]="plat.strMealThumb" alt="Image du plat" />
+                </div>
+                <div class="ingredients">
+                    <h2>Ingrédients</h2>
+                    <!-- <ul>
+                        <div *ngFor="let i of getRange(1, 20)">
+                            <li *ngIf="plat['strMeasure' + i] && plat['strIngredient' + i]"></li>
+                        </div>
+                    </ul> -->
+                    <mat-list role="list">
+                        <mat-list-item *ngFor="let ingredient of listIngredients; let i = index">
+                            {{ listMeasures[i] }} ~ {{ ingredient }}
+                        </mat-list-item>
+                    </mat-list>
+                </div>
+                <p>{{ plat.strInstructions }}</p>
+            </mat-card-content>
+        </mat-card>
+    </div>
+</div>

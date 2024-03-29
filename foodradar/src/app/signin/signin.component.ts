@@ -38,7 +38,7 @@ export class SigninComponent {
         sendEmailVerification(user)
           .then(() => {
             // Email de vérification envoyé
-            console.log('Email de vérification envoyé');
+            this.router.navigate(['/login']);
           })
           .catch((error) => {
             // Gérez les erreurs ici

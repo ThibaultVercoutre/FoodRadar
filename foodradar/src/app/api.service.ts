@@ -13,4 +13,8 @@ export class ApiService {
   getPlatsByType(type: string): Observable<Meals>{
     return this.http.get<Meals>(this.baseURL + 'search.php?s=' + type);
   }
+
+  getPlatsById(id: string | null): Observable<Meals>{
+    return this.http.get<Meals>(this.baseURL + 'lookup.php?i=' + id);
+  }
 }

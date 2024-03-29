@@ -8,6 +8,7 @@ import { LoginComponent } from './login/login.component';
 import { SigninComponent } from './signin/signin.component';
 import { LogoutComponent } from './logout/logout.component';
 import { AuthGuard, redirectUnauthorizedTo } from '@angular/fire/auth-guard';
+import { PlatComponent } from './plat/plat.component';
 
 const redirectUnauthorizedToLogin = () => redirectUnauthorizedTo(['login']);
 
@@ -19,6 +20,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'signin', component: SigninComponent },
   { path: 'logout', component: LogoutComponent, canActivate: [AuthGuard], data: {authGuardPipe: redirectUnauthorizedToLogin} },
+  { path: 'plat/:id', component: PlatComponent, canActivate: [AuthGuard], data: {authGuardPipe: redirectUnauthorizedToLogin} },
   { path: '**', component: ErrorComponent }
 ];
 

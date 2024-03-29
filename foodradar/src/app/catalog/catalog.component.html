@@ -1,4 +1,6 @@
 <div id="catalog">
+    <nav>
+    </nav>
     <div id="type">
         <button mat-raised-button (click)="getPlats('Chocolate')">Chocolat</button>
         <button mat-raised-button (click)="getPlats('vegetables')">Légumes</button>
@@ -6,9 +8,33 @@
     </div>
     <div id="plats">
         <div>
-            <ng-template ngFor let-item [ngForOf]="plats" let-i="index" [ngForTrackBy]="trackByFn">
-                <li>...</li>
-            </ng-template>
+            <table mat-table [dataSource]="plats" class="mat-elevation-z8">
+
+                <ng-container matColumnDef="strMeal">
+                    <th mat-header-cell *matHeaderCellDef> Meal Name </th>
+                    <td mat-cell *matCellDef="let plat"> {{ plat.strMeal }} </td>
+                </ng-container>
+              
+                <ng-container matColumnDef="strCategory">
+                    <th mat-header-cell *matHeaderCellDef class="fixed-column"> Category </th>
+                    <td mat-cell *matCellDef="let plat" class="fixed-column"> {{ plat.strCategory }} </td>
+                </ng-container>
+              
+                <ng-container matColumnDef="strArea">
+                    <th mat-header-cell *matHeaderCellDef class="fixed-column"> Area </th>
+                    <td mat-cell *matCellDef="let plat" class="fixed-column"> {{ plat.strArea }} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="actions">
+                    <th mat-header-cell *matHeaderCellDef class="fixed-column"> Actions </th>
+                    <td mat-cell *matCellDef="let plat" class="fixed-column">
+                      <button mat-button (click)="changeRoute(plat.idMeal)">Voir détails</button>
+                    </td>
+                </ng-container>
+
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            </table>            
         </div>
     </div>
 </div>
