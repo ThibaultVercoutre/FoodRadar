@@ -1,5 +1,6 @@
 export interface Meals {
     meals: Meal[];
+    foods: Meal2[];
 }
 
 export interface Meal {
@@ -32,4 +33,30 @@ export interface Meal {
     strIngredient18: string | null;
     strIngredient19: string | null;
     strIngredient20: string | null;
+}
+
+export interface Meal2 {
+    fdcId: number;
+    description: string;
+    dataType: string;
+    gtinUpc: string;
+    publishedDate: string;
+    brandOwner: string;
+    ingredients: string;
+    allHighlightFields: string;
+    score: number;
+    foodNutrients: FoodNutrient[];
+}
+
+export interface FoodNutrient {
+    nutrientId: number;
+    nutrientName: string;
+    nutrientNumber: string;
+    unitName: string;
+    value: number;
+    derivationCode: string;
+    derivationDescription: string;
+    nutrientSource: string;
+    nutrientSourceCode: string;
+    valuePer100: number;
 }
