@@ -1,6 +1,15 @@
-<div>
-    <label for="site-search">Search the site:</label>
-    <input type="search" id="site-search" name="q" />
-
-<button>Search</button>
+<div id="researchBar">
+    <div id="nom">
+        <input type="text" [(ngModel)]="nomPlat" name="nomPlat">
+        <button (click)="getPlats(nomPlat)">Rechercher</button>
+    </div>
+    <div *ngIf="plats.length > 0">
+        <div *ngFor="let plat of plats">
+            <ul *ngIf="plats.length > 0">
+                <li>
+                    {{ plat.strMeal }}
+                </li>
+            </ul>
+        </div>
+    </div>
 </div>
