@@ -17,7 +17,7 @@ import { FormsModule } from '@angular/forms';
   
 })
 
-export class ResearchComponent {
+export class ResearchComponent  {
 
   constructor(
     public apiService : ApiService
