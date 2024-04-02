@@ -37,8 +37,8 @@ export class CatalogComponent  {
     });
   }
 
-  public changeRoute(typePlat: string){
-    this.router.navigate(['/plat', typePlat]);
+  public changeRoute(idPlat: string){
+    this.router.navigate(['/plat', idPlat]);
   }
 
   public getCategory(){

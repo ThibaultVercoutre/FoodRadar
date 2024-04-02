@@ -5,7 +5,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { ActivatedRoute } from '@angular/router';
 import { MatListModule } from '@angular/material/list';
-import { Meal, Meal2 } from '../plat';
+import { FoodNutrient, Meal, Meal2 } from '../plat';
 import { ApiService } from '../api.service';
 import { CommonModule } from '@angular/common';
 
@@ -32,12 +32,33 @@ export class PlatComponent implements OnInit{
     return Array.from({length: end - start + 1}, (_, index) => start + index);
   }
 
-  ngOnInit(): void {
+  separerEtapes(texte: string): string[] {
+    const regEx = /STEP \d+(.*?)(?=STEP \d+|$)/gs;
+    const etapesMatches = texte.match(regEx);
 
+    if (etapesMatches) {
+        const etapes = etapesMatches.map(etape => etape.trim().replace(/STEP \d+/, ''));
+        return etapes;
+    } else {
+        const etapesParagraphe = texte.split(/\n+/).map(etape => etape.trim());
+        return etapesParagraphe;
+    }
+}
+
+  valeursNutritionnelles(): FoodNutrient[] {
+    console.log(this.plats2[0]);
+    return this.plats2[0].foodNutrients;
+  }
+
+  ngOnInit(): void {
     this.id = this.route.snapshot.paramMap.get('id');
+
     this.apiService.getPlatsById(this.id).subscribe(a =>{
-      console.log(a);
       this.plat = a.meals[0];
+
+      this.apiService.rechercherPlat(this.plat.strMeal).subscribe(a =>{
+        this.plats2 = a.foods;
+      });
 
       for (let i of this.getRange(1, 20)){
         if (this.plat['strIngredient' + i] != '' && this.plat['strIngredient' + i] != null){
@@ -45,9 +66,6 @@ export class PlatComponent implements OnInit{
           this.listMeasures.push(this.plat['strMeasure' + i]);
         }
       }
-      this.apiService.rechercherPlat(this.plat.strMeal).subscribe(a =>{
-        this.plats2 = a.foods;
-      });
     });
   }
 }
