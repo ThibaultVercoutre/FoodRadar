@@ -16,3 +16,49 @@
     height: 200px;
     border-radius: 50%;
 }
+
+h1 {
+    color: rgb(0, 212, 0);
+    font-size: 3em;
+    margin-top: 20px;
+}
+
+h2 {
+    color: rgb(0, 212, 0);
+    font-size: 2em;
+    margin-top: 20px;
+}
+
+.left {
+    text-align: left;
+}
+
+.liste {
+    max-width: max-content;
+    overflow: hidden;
+    text-overflow: ellipsis; 
+}
+
+.instuctions {
+    word-wrap: break-word;
+    overflow: hidden;
+    text-overflow: ellipsis; 
+}
+
+table th {
+    font-size: 1em;
+    color: rgb(0, 212, 0);
+    border: 1px solid black;
+    padding: 8px;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td {
+    border: 1px solid black;
+    padding: 8px;
+    text-align: center;
+}

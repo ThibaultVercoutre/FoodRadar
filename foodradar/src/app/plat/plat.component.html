@@ -9,18 +9,43 @@
                 </div>
                 <div class="ingredients">
                     <h2>Ingrédients</h2>
-                    <!-- <ul>
-                        <div *ngFor="let i of getRange(1, 20)">
-                            <li *ngIf="plat['strMeasure' + i] && plat['strIngredient' + i]"></li>
-                        </div>
-                    </ul> -->
-                    <mat-list role="list">
-                        <mat-list-item *ngFor="let ingredient of listIngredients; let i = index">
-                            {{ listMeasures[i] }} ~ {{ ingredient }}
-                        </mat-list-item>
-                    </mat-list>
+                    <table>
+                        <tr>
+                            <th>Ingrédient</th>
+                            <th>Quantité</th>
+                        </tr>
+                        <tr *ngFor="let ingredient of listIngredients; let i = index">
+                            <td>{{ ingredient }}</td>
+                            <td>{{ listMeasures[i] }}</td>
+                        </tr>
+                    </table>
                 </div>
-                <p>{{ plat.strInstructions }}</p>
+                <div class="instructions">
+                    <h2>Instructions</h2>
+                    <table>
+                        <tr>
+                            <th>Etape</th>
+                            <th>Instructions</th>
+                        </tr>
+                        <tr *ngFor="let etape of separerEtapes(plat.strInstructions); let i = index">
+                            <td>{{ i + 1 }}</td>
+                            <td class="left">{{ etape }}</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="nutritions">
+                    <h2>Valeurs nutritionnelles</h2>
+                    <table>
+                        <tr>
+                            <th>Nutriment</th>
+                            <th>Valeur</th>
+                        </tr>
+                        <tr *ngFor="let vn of valeursNutritionnelles(); let i = index">
+                            <td>{{ vn.nutrientName }}</td>
+                            <td>{{ vn.value }} {{ vn.unitName }}</td>
+                        </tr>
+                    </table>
+                </div>
             </mat-card-content>
         </mat-card>
     </div>

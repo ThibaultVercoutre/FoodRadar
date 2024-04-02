@@ -9,6 +9,8 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { MatIconModule } from '@angular/material/icon';
 import { MatTableModule } from '@angular/material/table';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-research',
@@ -22,23 +24,24 @@ import { MatTableModule } from '@angular/material/table';
 export class ResearchComponent  {
 
   constructor(
-    public apiService : ApiService
+    public apiService : ApiService,
+    public router: Router
   ){}
 
   query: any;
   plats: Meal[] = [];
   plats2: Meal2[] = [];
-  displayedColumns: string[] = ['strMeal', 'actions'];
+  displayedColumns: string[] = ['strMeal', 'strCategory', 'strArea', 'actions'];
 
   public rechercher(query: string){
     this.apiService.getPlatsByName(query).subscribe(a =>{
       console.log(a);
       this.plats = a.meals;
     })
-    this.apiService.rechercherPlat(query).subscribe(a =>{
-      console.log(a);
-      this.plats2 = a.foods;
-    })
+  }
+
+  public changeRoute(idPlat: string){
+    this.router.navigate(['/plat', idPlat]);
   }
 
   formatIngredients(ingredients: string): string {
