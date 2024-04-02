@@ -31,7 +31,7 @@ export class ResearchComponent  {
   displayedColumns: string[] = ['strMeal', 'actions'];
 
   public rechercher(query: string){
-    this.apiService.getPlatsByType(query).subscribe(a =>{
+    this.apiService.getPlatsByName(query).subscribe(a =>{
       console.log(a);
       this.plats = a.meals;
     })
@@ -39,5 +39,18 @@ export class ResearchComponent  {
       console.log(a);
       this.plats2 = a.foods;
     })
+  }
+
+  formatIngredients(ingredients: string): string {
+    const ingredientsArray = ingredients.split(', ');
+    if (ingredientsArray.length > 3) {
+        return ingredientsArray.slice(0, 3).join(', ') + '...';
+    } else {
+        return ingredients;
+    }
+  }
+
+  filterPlatsAvecIngredients(plats: any[]): any[] {
+    return plats.filter(plat => plat.ingredients && plat.ingredients.trim() !== '');
   }
 }

@@ -1,0 +1,18 @@
+#details_plat{
+    height: 100vh;
+    padding: 20px;
+}
+
+.presentation{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.presentation img{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+}
