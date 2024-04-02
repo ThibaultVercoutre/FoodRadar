@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Oleo+Script+Swash+Caps&display=swap" rel="stylesheet" />
+        <link href="details.component.css" rel="stylesheet" />
+        <title>Document</title>
+    </head>
+    <body>
+        <nav>
+            <img src="../../assets/images/FoodRadar.png" alt="logo" width="50px" height="50px">
+            <button mat-raised-button (click)="redirect('/home')">Home</button>
+            <button mat-raised-button (click)="redirect('/catalog')">Catalogue</button>
+            <button mat-raised-button (click)="redirect('/research')">Research</button>
+            <ng-container *ngIf="isConnected">
+                {{email}}
+                <button mat-raised-button (click)="redirect('/logout')">Se déconnecter</button>
+            </ng-container>
+            <ng-container *ngIf="!isConnected">
+                <button mat-raised-button (click)="redirect('/signin')">S'inscrire</button>
+                <button mat-raised-button (click)="redirect('/login')">Se connecter</button>
+            </ng-container>
+        </nav>
+        <div class="v46_14">
+            <div class="v46_34">
+                <span class="v46_28">
+                    This recipe is easy to make, but you’ll have to balance making three components at once: shrimp, noodles, and sauce.
+                     Here’s what you need to do at the same time:
+                        Make perfectly al dente pasta: Start the pasta pot to boil before making the other two components.
+                        Saute the shrimp: This takes just 3 to 4 minutes in a hot skillet. You’ll just need to make sure your shrimp is thawed, if you’re using frozen (see below).
+                        Make the sauce: Once the shrimp is done, make that sauce and you’re good to go! Pick from one of the two sauces below. While you’re making it, finish and drain those noodles. Then mix it all together! Done and done.</span>
+                        <span class="v46_25">Description</span>
+                    </div>
+                    <div class="v46_64">
+                        <div class="v46_35">
+                            <span class="v46_36">Shrimps</span>
+                <span class="v46_37">Ingredients</span>
+            </div>
+            <div class="v46_22"></div>
+            <span class="v46_23">Category . 150 KCAL . 11.99 euros</span>
+            <div class="name"></div>
+        </div>
+        <div class="v46_31">
+            <div class="v46_32"></div>
+            <span class="v46_33">Sea food</span>
+        </div>
+        </div>
+    </body>
+</html>

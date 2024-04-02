@@ -8,21 +8,34 @@ import { MatTableModule } from '@angular/material/table';
 import { MatChipsModule } from '@angular/material/chips';
 import { NgFor } from '@angular/common';
 import { Router } from '@angular/router';
+import { getAuth } from "firebase/auth";
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-catalog',
   templateUrl: './catalog.component.html',
   styleUrl: './catalog.component.css',
   standalone: true,
-  imports: [MatFormFieldModule, MatInputModule, MatButtonModule, MatTableModule, NgFor, MatChipsModule],
+  imports: [MatFormFieldModule, MatInputModule, MatButtonModule, MatTableModule, NgFor, MatChipsModule, CommonModule],
 })
 
 export class CatalogComponent  {
 
+  email: string | null = 'No email';
+  isConnected: boolean = false;
+
+  auth = getAuth();
+  user = this.auth.currentUser;
+
   constructor(
     public apiService : ApiService,
     public router: Router
-  ){}
+  ){
+    if (this.user) {
+      this.email = this.user.email;
+      this.isConnected = true;
+    }
+  }
 
   plats: Meal[] = [];
   categories: Categorie[] = [];
@@ -45,6 +58,10 @@ export class CatalogComponent  {
     this.apiService.getCategory().subscribe(a =>{
       this.categories = a.categories;
     });
+  }
+
+  redirect(page: string) {
+    this.router.navigate([page]);
   }
 
   ngOnInit(): void {

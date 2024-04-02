@@ -1,3 +1,16 @@
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #333;
+    color: white;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
 #catalog {
     /* min-height: calc(100vh - 60px); */
     display: flex;
@@ -8,8 +21,6 @@
 
 #type{
     display: flex;
-    justify-content: flex-start;
-    gap: 10px;
 }
 
 #plats {
