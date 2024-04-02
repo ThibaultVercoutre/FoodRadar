@@ -13,6 +13,7 @@ import { environment } from '../environments/environments';
 import { AuthGuardModule } from '@angular/fire/auth-guard';
 import { HttpClientModule } from '@angular/common/http';
 import { PlatComponent } from './plat/plat.component';
+import { DetailsComponent } from './details/details.component';
 
 @NgModule({
   declarations: [
