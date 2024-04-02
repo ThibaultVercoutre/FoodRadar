@@ -5,7 +5,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { ActivatedRoute } from '@angular/router';
 import { MatListModule } from '@angular/material/list';
-import { Meal } from '../plat';
+import { Meal, Meal2 } from '../plat';
 import { ApiService } from '../api.service';
 import { CommonModule } from '@angular/common';
 
@@ -19,6 +19,7 @@ import { CommonModule } from '@angular/common';
 export class PlatComponent implements OnInit{
   id: string | null = '';
   plat: Meal = {} as Meal;
+  plats2: Meal2[] = [];
   listIngredients: string[] = [];
   listMeasures: string[] = [];
 
@@ -44,9 +45,9 @@ export class PlatComponent implements OnInit{
           this.listMeasures.push(this.plat['strMeasure' + i]);
         }
       }
+      this.apiService.rechercherPlat(this.plat.strMeal).subscribe(a =>{
+        this.plats2 = a.foods;
+      });
     });
-
-    console.log(this.listIngredients);
-    console.log(this.listMeasures);
   }
 }
