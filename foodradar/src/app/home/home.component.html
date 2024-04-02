@@ -1,18 +1,49 @@
-<nav>
-    <img src="assets/images/FoodRadar.png" alt="logo" width="50px" height="50px">
-    <button mat-raised-button (click)="redirect('/home')">Home</button>
-    <button mat-raised-button (click)="redirect('/catalog')">Catalogue</button>
-    <button mat-raised-button (click)="redirect('/research')">Research</button>
-    <ng-container *ngIf="isConnected">
-        {{email}}
-        <button mat-raised-button (click)="redirect('/logout')">Se déconnecter</button>
-    </ng-container>
-    <ng-container *ngIf="!isConnected">
-        <button mat-raised-button (click)="redirect('/signin')">S'inscrire</button>
-        <button mat-raised-button (click)="redirect('/login')">Se connecter</button>
-    </ng-container>
-</nav>
-<div>
-    <h1 id="title">Food Radar</h1>
-    <p id="subtitle">Explorez une nouvelle approche de la cuisine avec notre application innovante, où vous pourrez découvrir de délicieuses recettes basées sur les ingrédients que vous avez sous la main. Transformez votre garde-manger en une inspiration culinaire !</p>
-</div>
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="https://fonts.googleapis.com/css?family=Oleo+Script&display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet" />
+        <link href="home.component.css" rel="stylesheet" />
+        <title>Document</title>
+    </head>
+    <body>
+        <nav>
+            <img src="../../assets/images/FoodRadar.png" alt="logo" width="50px" height="50px">
+            <button mat-raised-button (click)="redirect('/home')">Home</button>
+            <button mat-raised-button (click)="redirect('/catalog')">Catalogue</button>
+            <button mat-raised-button (click)="redirect('/research')">Research</button>
+            <ng-container *ngIf="isConnected">
+                {{email}}
+                <button mat-raised-button (click)="redirect('/logout')">Se déconnecter</button>
+            </ng-container>
+            <ng-container *ngIf="!isConnected">
+                <button mat-raised-button (click)="redirect('/signin')">S'inscrire</button>
+                <button mat-raised-button (click)="redirect('/login')">Se connecter</button>
+            </ng-container>
+        </nav>
+        <div class="v2_24">
+            <div class="v1_3">
+                <div class="v2_4"></div>
+                <div class="v2_26">
+                    <span class="v2_6">FOOD RADAR</span>
+                    <span class="v2_8">Explore a fresh approach to cooking with our innovative app, where you can 
+                        discover delicious recipes based on the ingredients you have on hand. Transform your pantry 
+                        into a culinary inspiration!</span>
+                </div>
+            </div>
+            <div class="v2_30">
+                <div class="v21_2"></div>
+                <div class="v46_7">
+                <div class="v22_11"></div>
+                    <span class="v22_12">Filters</span>
+                <div class="v22_13"></div>
+            </div>
+                    <div class="v46_49">
+                        <span class="v46_46">HOME</span>
+                        <span class="v46_47">ABOUT US</span>
+                        <span class="v46_48">OUR CATALOG</span>
+                    </div>
+            </div>
+        </div>
+    </body>
+</html>

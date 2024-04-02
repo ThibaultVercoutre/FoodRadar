@@ -1,9 +1,7 @@
-#login{
-    height: calc(100vh - 60px);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+#login {
+    position: absolute;
+    bottom: 250px; /* Distance depuis le bas de la fenêtre */
+    right: 400px; /* Distance depuis le bord droit de la fenêtre */
 }
 
 div form{
@@ -19,4 +17,74 @@ div form{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    color : black;
 }
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #333;
+    color: white;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+* {
+    box-sizing: border-box;
+  }
+  body {
+    font-size: 14px;
+  }
+  .v2_24 {
+    width: 100%;
+    height: 854px;
+    /*background: url("../../assets/images/v2_24.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;*/
+    opacity: 1;
+    position: relative;
+    top: 0px;
+    left: 0px;
+    overflow: hidden;
+  }
+  .v1_3 {
+    width: 100%;
+    height: 854px;
+    background: url("../../assets/images/background_login.webp");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size:contain;
+    opacity: 1;
+    position: relative;
+    top: 0px;
+    left: 0px;
+    overflow: hidden;
+  }
+
+  .v2_4 {
+    width: 100%;
+    height: 854px;
+    background: rgba(0,0,0,0.5);
+    opacity: 1;
+    position: absolute;
+    top: 0px;
+    left: 31px;
+  }
+  .v2_26 {
+    width: 100%;
+    height: 358px;
+    /*background: url("../images/v2_26.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;*/
+    opacity: 1;
+    position: absolute;
+    top: 248px;
+    left: 72px;
+    overflow: hidden;
+  }
