@@ -7,13 +7,15 @@ import { Meal, Meals, Meal2 } from '../plat';
 import { MatCardModule } from '@angular/material/card';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { MatIconModule } from '@angular/material/icon';
+import { MatTableModule } from '@angular/material/table';
 
 @Component({
   selector: 'app-research',
   templateUrl: './research.component.html',
   styleUrl: './research.component.css',
   standalone: true,
-  imports: [CommonModule, MatFormFieldModule, MatInputModule, MatButtonModule, MatCardModule, FormsModule],
+  imports: [MatTableModule, MatIconModule, CommonModule, MatFormFieldModule, MatInputModule, MatButtonModule, MatCardModule, FormsModule],
   
 })
 
@@ -26,6 +28,7 @@ export class ResearchComponent  {
   query: any;
   plats: Meal[] = [];
   plats2: Meal2[] = [];
+  displayedColumns: string[] = ['strMeal', 'actions'];
 
   public rechercher(query: string){
     this.apiService.getPlatsByName(query).subscribe(a =>{
