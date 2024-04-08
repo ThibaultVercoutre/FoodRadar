@@ -19,8 +19,9 @@ nav {
     align-items: center;
 }
 
-#type{
-    display: flex;
+.mat-chip-listbox .category-option {
+    display: block;
+    margin-bottom: 10px; /* Espacement entre chaque catégorie */
 }
 
 #plats {

@@ -7,6 +7,8 @@ import { Meal, Meals, Meal2 } from '../plat';
 import { MatCardModule } from '@angular/material/card';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { Router } from '@angular/router';
+import { getAuth } from "firebase/auth";
 
 @Component({
   selector: 'app-research',
@@ -19,9 +21,20 @@ import { FormsModule } from '@angular/forms';
 
 export class ResearchComponent  {
 
+  email: string | null = 'No email';
+  isConnected: boolean = false;
+
+  auth = getAuth();
+  user = this.auth.currentUser;
+
   constructor(
-    public apiService : ApiService
-  ){}
+    public apiService : ApiService, private router: Router
+  ){
+    if (this.user) {
+      this.email = this.user.email;
+      this.isConnected = true;
+    }
+  }
 
   query: any;
   plats: Meal[] = [];
@@ -49,5 +62,12 @@ export class ResearchComponent  {
 
   filterPlatsAvecIngredients(plats: any[]): any[] {
     return plats.filter(plat => plat.ingredients && plat.ingredients.trim() !== '');
+  }
+
+  redirect(page: string) {
+    this.router.navigate([page]);
+  }
+
+  ngOnInit(): void {
   }
 }

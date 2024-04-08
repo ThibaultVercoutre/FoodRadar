@@ -1,32 +1,58 @@
-<div id="researchBar">
-    <div id="nom">
-        <input type="text" [(ngModel)]="query" name="query">
-        <button (click)="rechercher(query)">Rechercher</button>
-    </div>
-    <div id="results">
-        <div *ngIf="plats.length > 0">
-            <div *ngFor="let plat of plats">
-                <ul *ngIf="plats.length > 0">
-                    <h3>
-                        {{ plat.strMeal }}
-                    </h3>
-                    <p>
-                        {{ plat.strIngredient1 }}, {{ plat.strIngredient2 }}, {{ plat.strIngredient3 }}...
-                    </p>
-                </ul>
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="https://fonts.googleapis.com/css?family=Oleo+Script&display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet" />
+        <link href="research.component.css" rel="stylesheet" />
+        <title>Document</title>
+    </head>
+    <body>
+        <nav>
+            <img src="../../assets/images/FoodRadar.png" alt="logo" width="50px" height="50px">
+            <button mat-raised-button (click)="redirect('/home')">Home</button>
+            <button mat-raised-button (click)="redirect('/catalog')">Catalogue</button>
+            <button mat-raised-button (click)="redirect('/research')">Research</button>
+            <ng-container *ngIf="isConnected">
+                {{email}}
+                <button mat-raised-button (click)="redirect('/logout')">Se déconnecter</button>
+            </ng-container>
+            <ng-container *ngIf="!isConnected">
+                <button mat-raised-button (click)="redirect('/signin')">S'inscrire</button>
+                <button mat-raised-button (click)="redirect('/login')">Se connecter</button>
+            </ng-container>
+        </nav>
+
+        <div id="researchBar">
+        <div id="nom">
+            <input type="text" [(ngModel)]="query" name="query">
+            <button (click)="rechercher(query)">Rechercher</button>
+        </div>
+        <div id="results">
+            <div *ngIf="plats.length > 0">
+                <div *ngFor="let plat of plats">
+                    <ul *ngIf="plats.length > 0">
+                        <h3>
+                            {{ plat.strMeal }}
+                        </h3>
+                        <p>
+                            {{ plat.strIngredient1 }}, {{ plat.strIngredient2 }}, {{ plat.strIngredient3 }}...
+                        </p>
+                    </ul>
+                </div>
+            </div>
+            <div *ngIf="plats2.length > 0">
+                <div *ngFor="let plat of filterPlatsAvecIngredients(plats2); let i = index">
+                    <ul *ngIf="i < 20">
+                        <h3>
+                            {{ plat.description }}
+                        </h3>
+                        <p>
+                            {{ formatIngredients(plat.ingredients) }}
+                        </p>
+                    </ul>
+                </div>
             </div>
         </div>
-        <div *ngIf="plats2.length > 0">
-            <div *ngFor="let plat of filterPlatsAvecIngredients(plats2); let i = index">
-                <ul *ngIf="i < 20">
-                    <h3>
-                        {{ plat.description }}
-                    </h3>
-                    <p>
-                        {{ formatIngredients(plat.ingredients) }}
-                    </p>
-                </ul>
-            </div>
-        </div>
     </div>
-</div>
+    </body>
+</html>
