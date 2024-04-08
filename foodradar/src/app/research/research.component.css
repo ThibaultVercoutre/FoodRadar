@@ -1,10 +1,11 @@
-#researchBar {
+/*#researchBar {
+    margin-top: -240px;
     height: calc(100vh - 60px);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-}
+}*/
 
 nav {
     display: flex;
@@ -18,3 +19,107 @@ nav {
     width: 100%;
     z-index: 1000;
 }
+
+.search-container {
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.search-input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px; 
+    margin-right: 10px;
+    width: 300px;
+}
+
+.search-button {
+    padding: 10px 20px; 
+    background-color: #092317;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.search-button:hover {
+    background-color: #395347;
+}
+
+
+.v2_24 {
+    width: 100%;
+    height: 854px;
+    /*background: url("../../assets/images/v2_24.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;*/
+    opacity: 1;
+    position: relative;
+    top: 0px;
+    left: 0px;
+    overflow: hidden;
+  }
+  .v1_3 {
+    width: 100%;
+    height: 854px;
+    background: url("../../assets/images/v1_3.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    opacity: 1;
+    position: relative;
+    top: 0px;
+    left: 0px;
+    overflow: hidden;
+  }
+  .v2_4 {
+    width: 100%;
+    height: 854px;
+    background: rgba(0,0,0,0.5);
+    opacity: 1;
+    position: absolute;
+    top: 0px;
+    left: 31px;
+  }
+  .v2_26 {
+    width: 100%;
+    height: 358px;
+    /*background: url("../images/v2_26.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;*/
+    opacity: 1;
+    position: absolute;
+    top: 248px;
+    left: 72px;
+    overflow: hidden;
+  }
+  .v2_6 {
+    width: 561px;
+    color: rgba(255,255,255,1);
+    position: absolute;
+    top: 30px;
+    left: 360px;
+    font-family: Oleo Script;
+    font-weight: Regular;
+    font-size: 96px;
+    opacity: 1;
+    text-align: left;
+  }
+  .v2_8 {
+    width: 100%;
+    color: rgba(255,255,255,1);
+    position: absolute;
+    top: 132px;
+    left: 0px;
+    font-family: Poppins;
+    font-weight: Regular;
+    font-size: 24px;
+    opacity: 1;
+    text-align: center;
+  }
