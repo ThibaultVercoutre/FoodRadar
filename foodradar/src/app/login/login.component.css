@@ -58,7 +58,7 @@ nav {
     background: url("../../assets/images/background_login.webp");
     background-repeat: no-repeat;
     background-position: center center;
-    background-size:contain;
+    background-size:cover;
     opacity: 1;
     position: relative;
     top: 0px;
@@ -88,3 +88,37 @@ nav {
     left: 72px;
     overflow: hidden;
   }
+
+  @media screen and (min-width: 500px) {
+    #login {
+      position: absolute;
+      bottom: 250px;
+      right: 200px;
+  }
+  }
+
+/* Styles pour les écrans jusqu'à 768px de large */
+@media screen and (max-width: 768px) {
+  nav {
+    padding: 10px;
+    background-color:#333;
+    left: 0px;
+  }
+
+  nav button {
+    margin-top: 10px;
+    font-size: 12px;
+    margin: 5px;
+  }   
+  
+  nav img {
+    display: none;
+  }
+ 
+  #login {
+    position: absolute;
+    bottom: 250px;
+    right: 100px;
+}
+}
+

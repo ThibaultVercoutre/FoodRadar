@@ -8,6 +8,8 @@ import { MatListModule } from '@angular/material/list';
 import { Meal } from '../plat';
 import { ApiService } from '../api.service';
 import { CommonModule } from '@angular/common';
+import { Router } from '@angular/router';
+import { getAuth } from "firebase/auth";
 
 @Component({
   selector: 'app-plat',
@@ -17,6 +19,12 @@ import { CommonModule } from '@angular/common';
   imports: [MatFormFieldModule, MatInputModule, MatButtonModule, MatCardModule, CommonModule, MatListModule],
 })
 export class PlatComponent implements OnInit{
+  email: string | null = 'No email';
+  isConnected: boolean = false;
+
+  auth = getAuth();
+  user = this.auth.currentUser;
+
   id: string | null = '';
   plat: Meal = {} as Meal;
   listIngredients: string[] = [];
@@ -24,11 +32,20 @@ export class PlatComponent implements OnInit{
 
   constructor(
     public route: ActivatedRoute,
-    public apiService : ApiService) {
+    public apiService : ApiService,
+    private router: Router) {
+      if (this.user) {
+        this.email = this.user.email;
+        this.isConnected = true;
+      }
   }
 
   getRange(start: number, end: number): number[] {
     return Array.from({length: end - start + 1}, (_, index) => start + index);
+  }
+
+  redirect(page: string) {
+    this.router.navigate([page]);
   }
 
   ngOnInit(): void {
