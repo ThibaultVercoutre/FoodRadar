@@ -38,6 +38,7 @@
                                     <input type="text" [(ngModel)]="query" name="query" class="search-input" placeholder="Entrez votre recherche...">
                                     <button (click)="rechercher(query)" class="search-button">Rechercher</button>
                                 </div>
+                                    
                             <div id="results">
                                 <div *ngIf="plats.length > 0">
                                     <div *ngFor="let plat of plats">
