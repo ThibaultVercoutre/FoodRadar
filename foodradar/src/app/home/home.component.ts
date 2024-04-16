@@ -13,7 +13,23 @@ import { CommonModule } from '@angular/common';
   imports: [MatButtonModule, CommonModule],
 })
 export class HomeComponent {
+  // Define states for the navbar visibility
+  //private states: string[] = ['hidden', 'shown'];
 
+  // Initial state: hidden
+  //private currentStateIndex = 0;
+
+  // Property to bind to the ngClass directive in the template
+  /*isNavVisible = false;
+
+  toggleNavbar() {
+    // Toggle the current state index
+    this.currentStateIndex = (this.currentStateIndex + 1) % this.states.length;
+
+    // Update the visibility based on the current state
+    this.isNavVisible = this.states[this.currentStateIndex] === 'shown';
+  }
+*/
   email: string | null = 'No email';
   isConnected: boolean = false;
 

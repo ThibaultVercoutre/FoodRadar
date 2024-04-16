@@ -8,6 +8,8 @@ import { MatListModule } from '@angular/material/list';
 import { FoodNutrient, Meal, Meal2 } from '../plat';
 import { ApiService } from '../api.service';
 import { CommonModule } from '@angular/common';
+import { Router } from '@angular/router';
+import { getAuth } from "firebase/auth";
 
 @Component({
   selector: 'app-plat',
@@ -17,6 +19,12 @@ import { CommonModule } from '@angular/common';
   imports: [MatFormFieldModule, MatInputModule, MatButtonModule, MatCardModule, CommonModule, MatListModule],
 })
 export class PlatComponent implements OnInit{
+  email: string | null = 'No email';
+  isConnected: boolean = false;
+
+  auth = getAuth();
+  user = this.auth.currentUser;
+
   id: string | null = '';
   plat: Meal = {} as Meal;
   plats2: Meal2[] = [];
@@ -25,13 +33,22 @@ export class PlatComponent implements OnInit{
 
   constructor(
     public route: ActivatedRoute,
-    public apiService : ApiService) {
+    public apiService : ApiService,
+    private router: Router) {
+      if (this.user) {
+        this.email = this.user.email;
+        this.isConnected = true;
+      }
   }
 
   getRange(start: number, end: number): number[] {
     return Array.from({length: end - start + 1}, (_, index) => start + index);
   }
 
+  redirect(page: string) {
+    this.router.navigate([page]);
+  }
+  
   separerEtapes(texte: string): string[] {
     const regEx = /STEP \d+(.*?)(?=STEP \d+|$)/gs;
     const etapesMatches = texte.match(regEx);
@@ -43,7 +60,7 @@ export class PlatComponent implements OnInit{
         const etapesParagraphe = texte.split(/\n+/).map(etape => etape.trim());
         return etapesParagraphe;
     }
-}
+  }
 
   valeursNutritionnelles(): FoodNutrient[] {
     console.log(this.plats2[0]);

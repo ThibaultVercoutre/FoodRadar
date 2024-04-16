@@ -42,10 +42,6 @@ nav {
   .v2_24 {
     width: 100%;
     height: 854px;
-    /*background: url("../../assets/images/v2_24.png");
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: cover;*/
     opacity: 1;
     position: relative;
     top: 0px;
@@ -58,7 +54,7 @@ nav {
     background: url("../../assets/images/background_login.webp");
     background-repeat: no-repeat;
     background-position: center center;
-    background-size:contain;
+    background-size:cover;
     opacity: 1;
     position: relative;
     top: 0px;
@@ -79,13 +75,77 @@ nav {
   .v2_26 {
     width: 100%;
     height: 358px;
-    /*background: url("../images/v2_26.png");
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: cover;*/
     opacity: 1;
     position: absolute;
     top: 248px;
     left: 72px;
     overflow: hidden;
   }
+
+
+
+
+
+  @media screen and (min-width: 500px) {
+    #login {
+      position: absolute;
+      bottom: 250px;
+      right: 200px;
+  }
+  }
+
+
+
+/* Styles pour les écrans jusqu'à 768px de large */
+@media screen and (max-width: 768px) {
+
+  nav {
+    padding: 10px;
+    background-color:#333;
+    left: 0px;
+  }
+
+  nav button {
+    margin-top: 10px;
+    font-size: 12px;
+    margin: 5px;
+  }   
+  
+  nav img {
+    display: none;
+  }
+ 
+  #signin {
+    position: absolute;
+    bottom: 250px;
+    right: 100px;
+}
+ 
+
+  .v2_6 {
+    width: 100%;
+    justify-content: center;
+    color: rgba(255,255,255,1);
+    top: 30px;
+    left: 0px;
+    font-family: Oleo Script;
+    font-weight: Regular;
+    font-size: 60px;
+    opacity: 1;
+    text-align: center;
+    position: absolute;
+  }
+  .v2_8 {
+    width: 100%;
+    color: rgba(255,255,255,1);
+    position: absolute;
+    top: 132px;
+    left: 0px;
+    font-family: Poppins;
+    font-weight: Regular;
+    font-size: 16px;
+    opacity: 1;
+    text-align: center;
+  }
+
+}

@@ -10,7 +10,7 @@ nav {
     width: 100%;
     z-index: 1000;
 }
-
+ 
 * {
     box-sizing: border-box;
   }
@@ -20,10 +20,6 @@ nav {
   .v2_24 {
     width: 100%;
     height: 854px;
-    /*background: url("../../assets/images/v2_24.png");
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: cover;*/
     opacity: 1;
     position: relative;
     top: 0px;
@@ -50,32 +46,28 @@ nav {
     opacity: 1;
     position: absolute;
     top: 0px;
-    left: 31px;
+    left: 0px;
   }
   .v2_26 {
     width: 100%;
     height: 358px;
-    /*background: url("../images/v2_26.png");
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: cover;*/
     opacity: 1;
     position: absolute;
     top: 248px;
-    left: 72px;
     overflow: hidden;
   }
   .v2_6 {
-    width: 561px;
+    width: 100%;
+    justify-content: center;
     color: rgba(255,255,255,1);
-    position: absolute;
     top: 30px;
-    left: 360px;
+    left: 0px;
     font-family: Oleo Script;
     font-weight: Regular;
     font-size: 96px;
     opacity: 1;
-    text-align: left;
+    text-align: center;
+    position: absolute;
   }
   .v2_8 {
     width: 100%;
@@ -147,10 +139,6 @@ nav {
   .v46_7 {
     width: 331px;
     height: 41px;
-    /*background: url("../images/v46_7.png");
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: cover;*/
     opacity: 1;
     position: absolute;
     top: 17px;
@@ -200,10 +188,6 @@ nav {
   .v46_49 {
     width: 517px;
     height: 53px;
-    /*background: url("../images/v46_49.png");
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: cover;*/
     opacity: 1;
     position: absolute;
     top: 17px;
@@ -246,4 +230,50 @@ nav {
     opacity: 1;
     text-align: center;
   }
+
+/* Styles pour les écrans jusqu'à 768px de large */
+@media screen and (max-width: 768px) {
+  nav {
+    padding: 10px;
+    background-color:#333;
+    left: 0px;
+  }
+
+  nav button {
+    margin-top: 10px;
+    font-size: 12px;
+    margin: 5px;
+  }   
   
+  nav img {
+    display: none;
+  }
+ 
+
+  .v2_6 {
+    width: 100%;
+    justify-content: center;
+    color: rgba(255,255,255,1);
+    top: 30px;
+    left: 0px;
+    font-family: Oleo Script;
+    font-weight: Regular;
+    font-size: 60px;
+    opacity: 1;
+    text-align: center;
+    position: absolute;
+  }
+  .v2_8 {
+    width: 100%;
+    color: rgba(255,255,255,1);
+    position: absolute;
+    top: 132px;
+    left: 0px;
+    font-family: Poppins;
+    font-weight: Regular;
+    font-size: 16px;
+    opacity: 1;
+    text-align: center;
+  }
+
+}
