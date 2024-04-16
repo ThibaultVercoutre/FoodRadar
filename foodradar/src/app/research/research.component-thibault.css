@@ -20,7 +20,7 @@ nav {
 }
 
 .search-container {
-    padding-top: 50px;
+    margin-top: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -56,12 +56,14 @@ nav {
     position: relative;
     top: 70px;
     left: 0px;
+    overflow: hidden;
     backdrop-filter: brightness(0.5);
     height: calc(100vh - 70px);
   }
   .v1_3 {
     width: 100%;
     opacity: 1;
+    overflow: hidden;
   }
   .v2_4 {
     width: 100%;
@@ -71,6 +73,7 @@ nav {
   .v2_26 {
     width: 100%;
     opacity: 1;
+    overflow: hidden;
   }
   .v2_6 {
     width: 561px;
@@ -89,10 +92,6 @@ nav {
     font-size: 24px;
     opacity: 1;
     text-align: center;
-  }
-
-  .results{
-    overflow-y: scroll;
   }
 
   /* Styles pour les écrans jusqu'à 768px de large */

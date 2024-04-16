@@ -1,63 +1,51 @@
 /* Styles pour les écrans supérieurs à 768px de large */
-@media screen and (min-width: 769px) {
-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
-    background-color: #333;
-    color: white;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 1000;
-}
+    nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 20px;
+        background-color: #333;
+        color: white;
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 1000;
+    }
 
 
-.mat-chip-listbox .category-option {
-    display: block;
-    margin-bottom: 10px; /* Espacement entre chaque catégorie */
-}
+    .mat-chip-listbox .category-option {
+        display: block;
+        margin-bottom: 10px; /* Espacement entre chaque catégorie */
+    }
 
-#plats {
-    padding: 20px;
-    width: 90vw;
-}
+    #plats {
+        padding: 20px;
+        width: 100%;
+    }
 
-.fixed-column {
-    width: 150px; /* Taille fixe pour la colonne */
-}
+    .fixed-column {
+        width: 150px; /* Taille fixe pour la colonne */
+    }
 
-.categorie_desc{
-    display: flex;
-    justify-content: space-between;
-    padding: 10px;
-    height: auto; /* Ajustement de la hauteur automatique */
-}
-.container {
-    display: flex;
-}
-.sidebar {
-    flex: 1;
-    padding: 10px;
-}
+    .categorie_desc{
+        display: flex;
+        justify-content: space-between;
+        padding: 10px;
+        height: auto; /* Ajustement de la hauteur automatique */
+    }
 
-.content {
-    flex: 1;
-    padding: 10px;
-}
+    .container {
+        display: flex;
+    }
 
+    .sidebar {
+        padding: 10px;
+    }
 
-/*
-
-#catalog {
-   
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}*/
-}
+    .content {
+        flex: 1;
+        padding: 10px;
+    }
 
 /* Styles pour les écrans jusqu'à 768px de large */
 @media screen and (max-width: 768px) {
@@ -114,7 +102,7 @@ nav {
     }
     
     .container {
-        flex-direction: column; /* Affichage en colonnes sur les petits écrans */
+        flex-direction: column;
     }
 
     .sidebar, .content {
@@ -124,11 +112,11 @@ nav {
 
     .categorie_desc {
         flex-direction: column;
-        height: auto; /* Ajustement de la hauteur automatique */
+        height: auto;
     }
 
     .fixed-column {
-        width: 100%; /* La colonne fixe prend toute la largeur sur les petits écrans */
+        width: 100%;
     }
     
 }
