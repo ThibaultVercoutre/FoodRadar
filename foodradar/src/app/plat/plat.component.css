@@ -31,6 +31,7 @@ nav {
     border-radius: 50%;
 }
 
+
 /* Styles pour les écrans jusqu'à 768px de large */
 @media screen and (max-width: 768px) {
     nav {
@@ -77,3 +78,49 @@ nav {
     }
   
   }
+
+h1 {
+    color: rgb(0, 212, 0);
+    font-size: 3em;
+    margin-top: 20px;
+}
+
+h2 {
+    color: rgb(0, 212, 0);
+    font-size: 2em;
+    margin-top: 20px;
+}
+
+.left {
+    text-align: left;
+}
+
+.liste {
+    max-width: max-content;
+    overflow: hidden;
+    text-overflow: ellipsis; 
+}
+
+.instuctions {
+    word-wrap: break-word;
+    overflow: hidden;
+    text-overflow: ellipsis; 
+}
+
+table th {
+    font-size: 1em;
+    color: rgb(0, 212, 0);
+    border: 1px solid black;
+    padding: 8px;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td {
+    border: 1px solid black;
+    padding: 8px;
+    text-align: center;
+}
