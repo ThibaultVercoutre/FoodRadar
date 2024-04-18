@@ -17,15 +17,12 @@ const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full'},  
   { path: 'home', component: HomeComponent },
   { path: 'catalog', component: CatalogComponent },
-  { path: 'details', component: DetailsComponent },
-  //, canActivate: [AuthGuard], data: {authGuardPipe: redirectUnauthorizedToCatalog}
-  { path: 'research', component: ResearchComponent },
-  // , canActivate: [AuthGuard], data: {authGuardPipe: redirectUnauthorizedToLogin}
+  { path: 'details', component: DetailsComponent, canActivate: [AuthGuard], data: {authGuardPipe: redirectUnauthorizedToLogin } },
+  { path: 'research', component: ResearchComponent, canActivate: [AuthGuard], data: {authGuardPipe: redirectUnauthorizedToLogin} },
   { path: 'login', component: LoginComponent },
   { path: 'signin', component: SigninComponent },
   { path: 'logout', component: LogoutComponent, canActivate: [AuthGuard], data: {authGuardPipe: redirectUnauthorizedToLogin} },
-  { path: 'plat/:id', component: PlatComponent },
-  //, canActivate: [AuthGuard], data: {authGuardPipe: redirectUnauthorizedToLogin}
+  { path: 'plat/:id', component: PlatComponent, canActivate: [AuthGuard], data: {authGuardPipe: redirectUnauthorizedToLogin} },
   { path: '**', component: ErrorComponent }
 ];
 
